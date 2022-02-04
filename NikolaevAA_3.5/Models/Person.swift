@@ -5,9 +5,12 @@
 //  Created by Anton Nikolaev on 04.02.2022.
 //
 
-import Foundation
+import SwiftUI
 
-struct Person {
+struct Person: Identifiable {
+    
+    var id: Int
+    
     let name: String
     let surname: String
     let email: String
@@ -37,6 +40,7 @@ extension Person {
         
         for index in 0..<iterationCount {
             let person = Person(
+                id: index,
                 name: names[index],
                 surname: surnames[index],
                 email: emails[index],
