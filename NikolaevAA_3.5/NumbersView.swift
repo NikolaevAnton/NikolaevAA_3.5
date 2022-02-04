@@ -11,13 +11,16 @@ struct NumbersView: View {
     let persons: [Person]
     
     var body: some View {
-        List(persons) {person in
-            Section(header: Text("\(person.fullName)")) {
-                Text("\(person.phoneNumber)")
-                Text("\(person.email)")
+        NavigationView {
+            List(persons) {person in
+                Section(header: Text("\(person.fullName)")) {
+                    Text("\(person.phoneNumber)")
+                    Text("\(person.email)")
+                }
             }
+            .listStyle(.plain)
+        .navigationTitle("Contact List")
         }
-        .listStyle(.plain)
     }
 }
 

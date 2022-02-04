@@ -11,6 +11,9 @@ struct UserProfileView: View {
     let person: Person
     
     var body: some View {
+        
+        
+        
         List {
             Section(header:
                         Text("\(person.fullName)")
@@ -37,6 +40,7 @@ struct UserProfileView: View {
                 }
             }
         }
+        
     }
 }
 
