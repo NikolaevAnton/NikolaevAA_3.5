@@ -10,19 +10,23 @@ import SwiftUI
 struct ContactsView: View {
     
     let persons: [Person]
-    let navigationName: String
     
     var body: some View {
-        List(persons) {person in
-            Text(person.fullName)
+        List(persons) { person in
+            
+            NavigationLink(destination:
+                            UserProfileView(person: person))
+            {
+                Text(person.fullName)
+            }
         }
         .listStyle(.plain)
-        .navigationTitle(navigationName)
+        
     }
 }
 
 struct ContactsView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactsView(persons: Person.getContactList(), navigationName: "Contact List")
+        ContactsView(persons: Person.getContactList())
     }
 }

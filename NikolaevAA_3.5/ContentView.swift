@@ -15,17 +15,18 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             TabView {
-                ContactsView(persons: persons, navigationName: navigationName)
+                ContactsView(persons: persons)
                     .tabItem {
                         Image(systemName: "person.2")
                         Text("contacts")
                     }
-                NumbersView(persons: persons, navigationName: navigationName)
+                NumbersView(persons: persons)
                     .tabItem {
                         Image(systemName: "phone")
                         Text("numbers")
                     }
             }
+            .navigationTitle("Contact List")
         }
         
     }

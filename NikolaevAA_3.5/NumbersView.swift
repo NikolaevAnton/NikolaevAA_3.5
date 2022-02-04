@@ -9,7 +9,6 @@ import SwiftUI
 
 struct NumbersView: View {
     let persons: [Person]
-    let navigationName: String
     
     var body: some View {
         List(persons) {person in
@@ -19,12 +18,11 @@ struct NumbersView: View {
             }
         }
         .listStyle(.plain)
-        .navigationTitle(navigationName)
     }
 }
 
 struct NumbersView_Previews: PreviewProvider {
     static var previews: some View {
-        NumbersView(persons: Person.getContactList(), navigationName: "Contact List")
+        NumbersView(persons: Person.getContactList())
     }
 }
